@@ -135,15 +135,7 @@
                 data-filter="print">Print</button>
         </div>
 
-        <!-- Add Project Button -->
-        <button id="add-project-btn"
-            class="flex items-center px-6 py-2 rounded-full bg-glass border border-white/20 hover:bg-white/10 hover:border-primary transition-all text-white group">
-            <svg class="h-5 w-5 mr-2 text-primary group-hover:scale-110 transition-transform" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-            </svg>
-            Upload Project
-        </button>
+
     </div>
 
     <!-- Gallery -->
@@ -153,49 +145,7 @@
         </div>
     </main>
 
-    <!-- Add Project Modal -->
-    <div id="upload-modal"
-        class="fixed inset-0 z-[100] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-dark border border-white/10 rounded-2xl w-full max-w-md p-8 relative shadow-2xl">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
 
-            <h2 class="text-2xl font-bold mb-6 text-center">Upload New Project</h2>
-
-            <form id="project-form" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-1">Project Title</label>
-                    <input type="text" id="p-title" required
-                        class="w-full bg-glass border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-primary text-white">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-1">Category</label>
-                    <select id="p-category"
-                        class="w-full bg-glass border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-primary text-white [&>option]:bg-dark">
-                        <option value="branding">Branding</option>
-                        <option value="uiux">UI/UX</option>
-                        <option value="print">Print</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-1">Image URL</label>
-                    <input type="url" id="p-image" placeholder="https://..." required
-                        class="w-full bg-glass border border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-primary text-white">
-                    <p class="text-xs text-gray-500 mt-1">For demo, paste an image link (e.g. Unsplash)</p>
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-primary text-black font-bold py-3 rounded-lg hover:opacity-90 transition-opacity mt-4">
-                    Add Project
-                </button>
-            </form>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-black py-12 border-t border-white/10">
@@ -239,8 +189,7 @@
             }
         ];
 
-        // Load projects from LocalStorage or use initial
-        let projects = JSON.parse(localStorage.getItem('kavindu_projects')) || initialProjects;
+        const projects = initialProjects;
 
         const gallery = document.getElementById('gallery');
         const filters = document.getElementById('filters');
@@ -283,41 +232,7 @@
             }
         });
 
-        // Modal Logic
-        const modal = document.getElementById('upload-modal');
-        const addBtn = document.getElementById('add-project-btn');
-        const closeBtn = document.getElementById('close-modal');
-        const form = document.getElementById('project-form');
 
-        addBtn.addEventListener('click', () => modal.classList.remove('hidden'));
-        closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-
-        // Add Project Logic
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const newProject = {
-                id: Date.now(), // simple unique id
-                title: document.getElementById('p-title').value,
-                category: document.getElementById('p-category').value,
-                image: document.getElementById('p-image').value
-            };
-
-            projects.unshift(newProject); // Add to beginning
-            localStorage.setItem('kavindu_projects', JSON.stringify(projects));
-
-            renderProjects('all'); // Reset to all to show new project
-            // Reset filter buttons UI is optional but good UX
-            filterBtns.forEach(btn => {
-                btn.classList.remove('bg-primary', 'text-black', 'border-primary', 'font-semibold');
-                btn.classList.add('text-white', 'border-white/20');
-            });
-            document.querySelector('[data-filter="all"]').classList.remove('text-white', 'border-white/20');
-            document.querySelector('[data-filter="all"]').classList.add('bg-primary', 'text-black', 'border-primary', 'font-semibold');
-
-            modal.classList.add('hidden');
-            form.reset();
-        });
 
         // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
