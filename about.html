@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavindu-Graphic | About Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#00f2ea',
+                        secondary: '#ff0050',
+                        dark: '#0f0f13',
+                        glass: 'rgba(255, 255, 255, 0.05)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-black/80 backdrop-blur-md shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html"
+                        class="text-2xl font-bold tracking-tighter hover:scale-105 transition-transform">
+                        KAVINDU<span class="text-primary">-GRAPHIC</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-gray-300 hover:text-primary transition-colors font-medium relative group">
+                        Home
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="portfolio.html"
+                        class="text-gray-300 hover:text-primary transition-colors font-medium relative group">
+                        Portfolio
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html"
+                        class="text-white hover:text-primary transition-colors font-medium relative group">
+                        About
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html"
+                        class="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-black transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_15px_rgba(0,242,234,0.3)]">
+                        Hire Me
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-dark/95 backdrop-blur-xl absolute w-full border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-primary/20">Home</a>
+                <a href="portfolio.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-primary/20">Portfolio</a>
+                <a href="about.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-white bg-glass hover:bg-primary/20">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-primary border border-primary/30 mt-4">Hire
+                    Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="py-32 px-4 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div
+            class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Image / Visual -->
+            <div class="relative">
+                <div class="absolute inset-0 bg-secondary rounded-2xl blur-2xl opacity-20 transform rotate-6"></div>
+                <div class="relative glass-card rounded-2xl p-2 border border-white/20">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                        alt="Kavindu"
+                        class="rounded-xl w-full h-auto grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <!-- Stats Overlay -->
+                <div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl border border-white/10 shadow-2xl animate-bounce"
+                    style="animation-duration: 3s;">
+                    <div class="text-3xl font-bold text-primary">5+</div>
+                    <div class="text-sm text-gray-400">Years Experience</div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Hello, I'm <span class="text-primary">Kavindu</span>
+                </h2>
+                <h3 class="text-2xl text-gray-300 mb-6 font-light">Lead Graphic Designer & Visual Artist</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    I specialize in creating visual identities that speak louder than words. With a background in fine
+                    arts and digital media, I blend traditional aesthetics with modern design principles.
+                </p>
+                <p class="text-gray-400 leading-relaxed mb-8">
+                    My mission is to help brands communicate their values through compelling visuals. Whether it's a
+                    logo, a website, or a full branding suite, I bring passion and precision to every pixel.
+                </p>
+
+                <!-- Skills -->
+                <div class="space-y-4">
+                    <div class="w-full bg-gray-800 rounded-full h-2.5">
+                        <div class="bg-primary h-2.5 rounded-full" style="width: 95%"></div>
+                        <div class="flex justify-between text-xs mt-1 text-gray-500"><span>Adobe
+                                Photoshop</span><span>95%</span></div>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-2.5">
+                        <div class="bg-secondary h-2.5 rounded-full" style="width: 90%"></div>
+                        <div class="flex justify-between text-xs mt-1 text-gray-500">
+                            <span>Illustrator</span><span>90%</span></div>
+                    </div>
+                    <div class="w-full bg-gray-800 rounded-full h-2.5">
+                        <div class="bg-white h-2.5 rounded-full" style="width: 85%"></div>
+                        <div class="flex justify-between text-xs mt-1 text-gray-500"><span>Figma /
+                                UI</span><span>85%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Timeline -->
+    <section class="py-20 bg-dark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">My Journey</h2>
+            <div class="max-w-3xl mx-auto space-y-8 relative border-l border-white/10 ml-4 md:ml-auto pl-8 md:pl-0">
+
+                <!-- Item 1 -->
+                <div class="relative md:ml-8">
+                    <span
+                        class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-primary border-4 border-black box-content"></span>
+                    <h3 class="text-xl font-bold text-white">Senior Designer</h3>
+                    <p class="text-primary text-sm mb-2">2022 - Present | Creative Agency</p>
+                    <p class="text-gray-400">Leading the design team for international client projects.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative md:ml-8">
+                    <span
+                        class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-secondary border-4 border-black box-content"></span>
+                    <h3 class="text-xl font-bold text-white">Freelance Designer</h3>
+                    <p class="text-secondary text-sm mb-2">2019 - 2022 | Upwork / Fiverr</p>
+                    <p class="text-gray-400">Completed 100+ projects for startups and small businesses worldwide.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative md:ml-8">
+                    <span
+                        class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-white border-4 border-black box-content"></span>
+                    <h3 class="text-xl font-bold text-white">Junior Graphic Artist</h3>
+                    <p class="text-gray-300 text-sm mb-2">2017 - 2019 | Local Studio</p>
+                    <p class="text-gray-400">Started my career designing print media and logos.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            © 2024 Kavindu-Graphic. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

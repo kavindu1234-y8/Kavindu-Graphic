@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavindu-Graphic | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#00f2ea', // Cyan
+                        secondary: '#ff0050', // Pink/Red
+                        dark: '#0f0f13',
+                        glass: 'rgba(255, 255, 255, 0.05)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #00f2ea, #ff0050);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold tracking-tighter hover:scale-105 transition-transform">
+                        KAVINDU<span class="text-primary">-GRAPHIC</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-white hover:text-primary transition-colors font-medium relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="portfolio.html" class="text-gray-300 hover:text-primary transition-colors font-medium relative group">
+                        Portfolio
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-300 hover:text-primary transition-colors font-medium relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-black transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_15px_rgba(0,242,234,0.3)]">
+                        Hire Me
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-xl absolute w-full border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-glass hover:bg-primary/20">Home</a>
+                <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-primary/20">Portfolio</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-primary/20">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary border border-primary/30 mt-4">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] animate-float" style="animation-delay: -3s;"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+                <span class="inline-block py-1 px-3 rounded-full bg-glass border border-white/10 text-primary text-sm font-semibold mb-6 animate-pulse">
+                    AVAILABLE FOR FREELANCE WORK
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Crafting <br>
+                    <span class="gradient-text">Visual Stories</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    Hi, I'm Kavindu. A passionate Graphic Designer turning bold ideas into stunning visual realities. Branding, UI/UX, and Digital Art.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="portfolio.html" class="px-8 py-4 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                        View My Work
+                    </a>
+                    <a href="contact.html" class="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-colors backdrop-blur-sm">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center relative">
+                <!-- Abstract 3D-like Shape or Hero Image placeholder -->
+                <div class="relative w-80 h-80 md:w-[500px] md:h-[500px]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-2xl opacity-20 animate-spin-slow"></div>
+                    <div class="relative w-full h-full glass-card rounded-2xl flex items-center justify-center transform rotate-3 hover:rotate-0 transition-all duration-500 overflow-hidden border border-white/10 shadow-2xl">
+                         <!-- Placeholder for Hero Image -->
+                         <div class="text-center p-8">
+                             <div class="text-6xl mb-4">🎨</div>
+                             <h3 class="text-2xl font-bold mb-2">Creative Design</h3>
+                             <p class="text-gray-400">Bringing imagination to life.</p>
+                         </div>
+                         <!-- Decorative elements -->
+                         <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary rounded-full blur-xl opacity-40"></div>
+                         <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary rounded-full blur-xl opacity-40"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Work Preview -->
+    <section class="py-20 bg-dark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Featured Projects</h2>
+                    <div class="h-1 w-20 bg-primary"></div>
+                </div>
+                <a href="portfolio.html" class="hidden md:flex items-center text-primary hover:text-white transition-colors group">
+                    View All Projects 
+                    <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="group relative overflow-hidden rounded-xl glass-card aspect-[4/3] cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Brand Identity</h3>
+                        <p class="text-primary text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Logo Design</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b7993125651?auto=format&fit=crop&q=80&w=800" alt="Project 1" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="group relative overflow-hidden rounded-xl glass-card aspect-[4/3] cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Social Media Kit</h3>
+                        <p class="text-primary text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Marketing</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800" alt="Project 2" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="group relative overflow-hidden rounded-xl glass-card aspect-[4/3] cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Product Packaging</h3>
+                        <p class="text-primary text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Print Design</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1541462608143-0af7f5b3bbc1?auto=format&fit=crop&q=80&w=800" alt="Project 3" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="portfolio.html" class="inline-flex items-center text-primary hover:text-white transition-colors">
+                    View All Projects 
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold tracking-tighter text-white">
+                        KAVINDU<span class="text-primary">-GRAPHIC</span>
+                    </span>
+                    <p class="text-gray-500 text-sm mt-2">© 2024 All Rights Reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                        <span class="sr-only">Instagram</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.072 3.269.156 4.781 1.687 4.935 4.935.06 1.266.072 1.646.072 4.849 0 3.205-.012 3.584-.072 4.849-1.54 3.251-1.687 4.781-4.935 4.935-1.266.06-1.646.072-4.849.072-3.205 0-3.584-.012-4.849-.072-3.269-.156-4.781-1.687-4.935-4.935-.06-1.266-.072-1.646-.072-4.849 0-3.204.012-3.584.072-4.849 1.54-3.269 1.687-4.781 4.935-4.935 1.266-.06 1.646-.072 4.849-.072zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.206-6.786 2.618-6.992 6.958-.058 1.28-.072 1.687-.072 4.947 0 3.259.014 3.668.072 4.948.206 4.358 2.618 6.786 6.992 6.992 1.28.058 1.687.072 4.947.072 3.259 0 3.668-.014 4.948-.072 4.354-.206 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.76-6.162 6.162s2.76 6.163 6.162 6.163 6.162-2.76 6.162-6.163c0-3.403-2.76-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scrolled Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/80', 'backdrop-blur-md', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-black/80', 'backdrop-blur-md', 'shadow-lg');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
